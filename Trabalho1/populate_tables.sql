@@ -5,9 +5,9 @@ GO
 CREATE OR ALTER PROCEDURE PopulateTables
 AS
 	INSERT INTO Funcionario (id, email, telemovel, nome, data_nascimento, endereco, profissao) VALUES
-		(111222444, 'peters@mail.pt', 961111111, 'Pedro', '1998-05-01', 'Rua 122', 'Software Dev'),
-		(111222333, 'ricardians@mail.pt', 962222222, 'Ricardo', '1997-06-24', 'Rua 123', 'Software Dev'),
-		(111222555, 'ineis@mail.pt', 963333333, 'Inês', '1997-02-14', 'Rua 124', 'Software Dev')
+		(111222444, 'peters@mail.pt', 961111111, 'Pedro', '1998-05-01', 'Rua 122 1111-123 Torres', 'Software Dev'),
+		(111222333, 'ricardians@mail.pt', 962222222, 'Ricardo', '1997-06-24', 'Rua 123 2222-123 Almada', 'Software Dev'),
+		(111222555, 'ineis@mail.pt', 963333333, 'Inês', '1997-02-14', 'Rua 124 3333-123 Mafra', 'Software Dev')
 
 	INSERT INTO Tipo(id, descricao) VALUES
 		(10101, 'Piscina'),

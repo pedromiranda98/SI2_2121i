@@ -38,7 +38,7 @@ AS
 		id numeric(5) primary key,
 		localizacao varchar(50),
 		n_elementos int,
-		intervencoes_atribuidas int -- min=1, max=3
+		intervencoes_atribuidas int check (intervencoes_atribuidas < 4)
 	);
 	
 	CREATE TABLE Intervencao (
