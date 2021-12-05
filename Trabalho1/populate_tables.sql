@@ -41,6 +41,10 @@ AS
 		(111222444, 30000),
 		(111222333, 30000),
 		(111222555, 30000)
+
+	INSERT INTO CompetenciaColaborador(id_competencia,id_colaborador,id_equipa) VALUES
+		(123,111222444,30000),
+		(123,111222333,30000)
 GO
 
 EXEC PopulateTables;
