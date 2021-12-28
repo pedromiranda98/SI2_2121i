@@ -36,6 +36,7 @@ AS
 
 	INSERT INTO Competencia(id, descricao) VALUES
 		(123, 'Faturação')
+		-- Add more
 
 	INSERT INTO ColaboradorEquipa(id, id_equipa) VALUES
 		(111222444, 30000),
@@ -45,6 +46,7 @@ AS
 	INSERT INTO CompetenciaColaborador(id_competencia,id_colaborador,id_equipa) VALUES
 		(123,111222444,30000),
 		(123,111222333,30000)
+		-- Add more
 GO
 
 EXEC PopulateTables;
