@@ -25,4 +25,4 @@ SELECT * FROM Intervencao
 --Working
 EXEC UpdateInterStatus @id = 100000001, @novo_estado = "em execução"
 --Error
-EXEC UpdateInterStatus @id = 100000001, @novo_estado = "em execução"
+EXEC UpdateInterStatus @id = 200000000, @novo_estado = "em execução"
