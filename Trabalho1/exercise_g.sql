@@ -1,7 +1,7 @@
-USE L51NG7
+--USE L51NG7
 
 GO
-CREATE OR ALTER FUNCTION getNextTeamId()
+CREATE OR ALTER FUNCTION generateTeamId()
 RETURNS numeric(5)
 AS
 	BEGIN
@@ -25,7 +25,7 @@ SET TRANSACTION ISOLATION LEVEL READ COMMITTED
 			DECLARE @id numeric(5)
 			DECLARE @n_elementos int
 			DECLARE @intervencoes_atribuidas int
-			SET @id = [dbo].getNextTeamId()
+			SET @id = [dbo].generateTeamId()
 			SET @n_elementos = 0
 			SET @intervencoes_atribuidas = 0
 			INSERT INTO Equipa(id, localizacao, n_elementos, intervencoes_atribuidas) VALUES (@id, @localizacao, @n_elementos, @intervencoes_atribuidas);

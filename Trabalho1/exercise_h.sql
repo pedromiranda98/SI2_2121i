@@ -1,7 +1,6 @@
 USE SI2Trab1
 
 GO
-
 CREATE OR ALTER PROCEDURE updateTeamElements
 		@id numeric(9),
 		@id_equipa numeric(5),
@@ -22,11 +21,13 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 					BEGIN
 						DELETE FROM CompetenciaColaborador WHERE id_colaborador = @id
 						DELETE FROM ColaboradorEquipa WHERE id = @id
+						UPDATE Equipa SET n_elementos = n_elementos-1 WHERE id = @id_equipa
 					END
 					ELSE
 					BEGIN
 						INSERT INTO ColaboradorEquipa(id, id_equipa) VALUES (@id, @id_equipa)
 						INSERT INTO CompetenciaColaborador(id_competencia, id_colaborador, id_equipa) VALUES (@id_competencia, @id, @id_equipa)
+						UPDATE Equipa SET n_elementos = n_elementos+1 WHERE id = @id_equipa
 					END
 				END
 			END
@@ -39,10 +40,15 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 		END CATCH
 GO
 
+------------------------------------------ TESTES ------------------------------------------
+
+SELECT * FROM Equipa;
 SELECT * FROM ColaboradorEquipa;
 SELECT * FROM CompetenciaColaborador;
+
+--UPDATE Equipa SET n_elementos = 2 WHERE id = 30000
 
 -- Já existente (Apaga os registos com estes dados)
 EXEC updateTeamElements @id = 111222333, @id_equipa = 30000, @id_competencia = 123
 -- Não existente (Insere os dados nas tabelas)
-EXEC updateTe
+EXEC updateTeamElements @id = 111222555, @id_equipa = 30000, @id_competencia = 123
