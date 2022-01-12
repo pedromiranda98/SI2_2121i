@@ -22,7 +22,7 @@ SET TRANSACTION ISOLATION LEVEL READ COMMITTED -- DOUBLE CHECK
 GO
 
 SELECT * FROM Intervencao
---Working
-EXEC UpdateInterStatus @id = 100000001, @novo_estado = "em execução"
---Error
+--Working (estado do ativo 100000002 passa de "em análise" para "em execução")
+EXEC UpdateInterStatus @id = 100000002, @novo_estado = "em execução"
+--Error (a intervenção não existe)
 EXEC UpdateInterStatus @id = 200000000, @novo_estado = "em execução"

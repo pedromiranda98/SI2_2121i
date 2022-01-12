@@ -1,12 +1,14 @@
+--USE L51NG7
+
 GO
 CREATE OR ALTER FUNCTION getAvailableTeam(@interv_desc nvarchar(10))
 RETURNS numeric(5,0) 
 AS
 	BEGIN
 		DECLARE @codigo numeric(5,0) 
-		IF EXISTS (SELECT * FROM Equipa WHERE intervencoes_atribuidas=0)
+		IF EXISTS (SELECT * FROM Equipa WHERE intervencoes_atribuidas<3)
 			BEGIN
-				set @codigo = (SELECT TOP(1) id FROM Equipa WHERE intervencoes_atribuidas = 0)
+				set @codigo = (SELECT TOP(1) id FROM Equipa WHERE intervencoes_atribuidas < 3)
 			END
 		RETURN @codigo
 	END 
@@ -48,7 +50,7 @@ SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED -- DOUBLE CHECK
 				DECLARE @id numeric(9)
 				SET @id = dbo.generateInterId()
 				SET @id_equipa = dbo.getAvailableTeam(@descricao)
-				PRINT(@id_equipa)
+				--PRINT(@id_equipa)
 				IF (@id_equipa is null)
 				BEGIN
 					PRINT('There is no team available at the moment');

@@ -1,4 +1,4 @@
-USE SI2Trab1
+--USE L51NG7
 
 GO
 CREATE OR ALTER PROCEDURE updateTeamElements
