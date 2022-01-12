@@ -22,12 +22,14 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 						DELETE FROM CompetenciaColaborador WHERE id_colaborador = @id
 						DELETE FROM ColaboradorEquipa WHERE id = @id
 						UPDATE Equipa SET n_elementos = n_elementos-1 WHERE id = @id_equipa
+						PRINT('Employee deleted from the team')
 					END
 					ELSE
 					BEGIN
 						INSERT INTO ColaboradorEquipa(id, id_equipa) VALUES (@id, @id_equipa)
 						INSERT INTO CompetenciaColaborador(id_competencia, id_colaborador, id_equipa) VALUES (@id_competencia, @id, @id_equipa)
 						UPDATE Equipa SET n_elementos = n_elementos+1 WHERE id = @id_equipa
+						PRINT('Employee added to the team')
 					END
 				END
 			END
@@ -45,6 +47,7 @@ GO
 SELECT * FROM Equipa;
 SELECT * FROM ColaboradorEquipa;
 SELECT * FROM CompetenciaColaborador;
+SELECT * FROM Funcionario
 
 --UPDATE Equipa SET n_elementos = 2 WHERE id = 30000
 
