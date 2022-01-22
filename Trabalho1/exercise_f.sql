@@ -59,6 +59,7 @@ SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED -- DOUBLE CHECK
 				END
 				ELSE
 				BEGIN
+					SET @estado = 'em analise'
 					INSERT INTO Intervencao(id, descricao, estado, valor, data_inicio, data_fim, periodicidade, ativo_id) VALUES (@id, @descricao, @estado, @valor, @data_inicio, @data_fim, @periodicidade, @ativo_id)
 					INSERT INTO IntervencaoEquipa(data_inicio, data_fim, id_equipa, id_intervencao) VALUES (@data_inicio, @data_fim, @id_equipa, @id)
 					UPDATE Equipa SET intervencoes_atribuidas = intervencoes_atribuidas+1 WHERE id = @id_equipa
