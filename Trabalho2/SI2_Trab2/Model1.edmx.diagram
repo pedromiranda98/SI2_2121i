@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="31b7659fe97e4ed29b2c7adeb96009d7" Name="Diagram1">
+        <EntityTypeShape EntityType="L51NG7Model.Ativo" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="L51NG7Model.ColaboradorEquipa" Width="1.5" PointX="7.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="L51NG7Model.Competencia" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="L51NG7Model.Equipa" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="L51NG7Model.Funcionario" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="L51NG7Model.Intervencao" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="L51NG7Model.IntervencaoEquipa" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="L51NG7Model.Tipo" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="L51NG7Model.FK__Ativo__id_tipo__37FA4C37" ManuallyRouted="false" />
+        <AssociationConnector Association="L51NG7Model.FK__Ativo__parent_id__361203C5" ManuallyRouted="false" />
+        <AssociationConnector Association="L51NG7Model.FK__Intervenc__ativo__3CBF0154" ManuallyRouted="false" />
+        <AssociationConnector Association="L51NG7Model.FK__Colaborad__id_eq__46486B8E" ManuallyRouted="false" />
+        <AssociationConnector Association="L51NG7Model.FK__ColaboradorE__id__45544755" ManuallyRouted="false" />
+        <AssociationConnector Association="L51NG7Model.FK__Intervenc__id_eq__3F9B6DFF" ManuallyRouted="false" />
+        <AssociationConnector Association="L51NG7Model.FK__Intervenc__id_in__408F9238" ManuallyRouted="false" />
+        <AssociationConnector Association="L51NG7Model.CompetenciaColaborador" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

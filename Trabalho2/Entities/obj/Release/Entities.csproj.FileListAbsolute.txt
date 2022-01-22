@@ -1,0 +1,6 @@
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\ENTITIES\bin\Release\Entities.dll.config
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\ENTITIES\bin\Release\Entities.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\ENTITIES\bin\Release\Entities.pdb
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\ENTITIES\obj\Release\Entities.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\ENTITIES\obj\Release\Entities.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\ENTITIES\obj\Release\Entities.pdb

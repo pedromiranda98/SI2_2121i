@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="L51NG7Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ativo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="parent_id" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="data_aquisicao" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="marca" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="modelo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="localizacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="Decimal" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="id_tipo" Type="Decimal" Precision="5" Scale="0" />
+    <NavigationProperty Name="Tipo" Relationship="Self.FK__Ativo__id_tipo__37FA4C37" FromRole="Ativo" ToRole="Tipo" />
+    <NavigationProperty Name="Ativo1" Relationship="Self.FK__Ativo__parent_id__361203C5" FromRole="Ativo" ToRole="Ativo1" />
+    <NavigationProperty Name="Ativo2" Relationship="Self.FK__Ativo__parent_id__361203C5" FromRole="Ativo1" ToRole="Ativo" />
+    <NavigationProperty Name="Intervencaos" Relationship="Self.FK__Intervenc__ativo__3CBF0154" FromRole="Ativo" ToRole="Intervencao" />
+  </EntityType>
+  <EntityType Name="ColaboradorEquipa">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="id_equipa" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="id_equipa" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <NavigationProperty Name="Equipa" Relationship="Self.FK__Colaborad__id_eq__46486B8E" FromRole="ColaboradorEquipa" ToRole="Equipa" />
+    <NavigationProperty Name="Funcionario" Relationship="Self.FK__ColaboradorE__id__45544755" FromRole="ColaboradorEquipa" ToRole="Funcionario" />
+    <NavigationProperty Name="Competencias" Relationship="Self.CompetenciaColaborador" FromRole="ColaboradorEquipa" ToRole="Competencia" />
+  </EntityType>
+  <EntityType Name="Competencia">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ColaboradorEquipas" Relationship="Self.CompetenciaColaborador" FromRole="Competencia" ToRole="ColaboradorEquipa" />
+  </EntityType>
+  <EntityType Name="Equipa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="localizacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="n_elementos" Type="Int32" />
+    <Property Name="intervencoes_atribuidas" Type="Int32" />
+    <NavigationProperty Name="ColaboradorEquipas" Relationship="Self.FK__Colaborad__id_eq__46486B8E" FromRole="Equipa" ToRole="ColaboradorEquipa" />
+    <NavigationProperty Name="IntervencaoEquipas" Relationship="Self.FK__Intervenc__id_eq__3F9B6DFF" FromRole="Equipa" ToRole="IntervencaoEquipa" />
+  </EntityType>
+  <EntityType Name="Funcionario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="telemovel" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="data_nascimento" Type="DateTime" Precision="0" />
+    <Property Name="endereco" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="profissao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ColaboradorEquipas" Relationship="Self.FK__ColaboradorE__id__45544755" FromRole="Funcionario" ToRole="ColaboradorEquipa" />
+  </EntityType>
+  <EntityType Name="Intervencao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="descricao" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="valor" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="data_inicio" Type="DateTime" Precision="0" />
+    <Property Name="data_fim" Type="DateTime" Precision="0" />
+    <Property Name="periodicidade" Type="Int32" />
+    <Property Name="ativo_id" Type="Decimal" Precision="9" Scale="0" />
+    <NavigationProperty Name="Ativo" Relationship="Self.FK__Intervenc__ativo__3CBF0154" FromRole="Intervencao" ToRole="Ativo" />
+    <NavigationProperty Name="IntervencaoEquipas" Relationship="Self.FK__Intervenc__id_in__408F9238" FromRole="Intervencao" ToRole="IntervencaoEquipa" />
+  </EntityType>
+  <EntityType Name="IntervencaoEquipa">
+    <Key>
+      <PropertyRef Name="id_equipa" />
+      <PropertyRef Name="id_intervencao" />
+    </Key>
+    <Property Name="data_inicio" Type="DateTime" Precision="0" />
+    <Property Name="data_fim" Type="DateTime" Precision="0" />
+    <Property Name="id_equipa" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="id_intervencao" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <NavigationProperty Name="Equipa" Relationship="Self.FK__Intervenc__id_eq__3F9B6DFF" FromRole="IntervencaoEquipa" ToRole="Equipa" />
+    <NavigationProperty Name="Intervencao" Relationship="Self.FK__Intervenc__id_in__408F9238" FromRole="IntervencaoEquipa" ToRole="Intervencao" />
+  </EntityType>
+  <EntityType Name="Tipo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="5" Scale="0" Nullable="false" />
+    <Property Name="descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Ativoes" Relationship="Self.FK__Ativo__id_tipo__37FA4C37" FromRole="Tipo" ToRole="Ativo" />
+  </EntityType>
+  <Association Name="FK__Ativo__id_tipo__37FA4C37">
+    <End Role="Tipo" Type="Self.Tipo" Multiplicity="0..1" />
+    <End Role="Ativo" Type="Self.Ativo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Ativo">
+        <PropertyRef Name="id_tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ativo__parent_id__361203C5">
+    <End Role="Ativo" Type="Self.Ativo" Multiplicity="0..1" />
+    <End Role="Ativo1" Type="Self.Ativo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ativo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Ativo1">
+        <PropertyRef Name="parent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Intervenc__ativo__3CBF0154">
+    <End Role="Ativo" Type="Self.Ativo" Multiplicity="0..1" />
+    <End Role="Intervencao" Type="Self.Intervencao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ativo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Intervencao">
+        <PropertyRef Name="ativo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Colaborad__id_eq__46486B8E">
+    <End Role="Equipa" Type="Self.Equipa" Multiplicity="1" />
+    <End Role="ColaboradorEquipa" Type="Self.ColaboradorEquipa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ColaboradorEquipa">
+        <PropertyRef Name="id_equipa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ColaboradorE__id__45544755">
+    <End Role="Funcionario" Type="Self.Funcionario" Multiplicity="1" />
+    <End Role="ColaboradorEquipa" Type="Self.ColaboradorEquipa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ColaboradorEquipa">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Intervenc__id_eq__3F9B6DFF">
+    <End Role="Equipa" Type="Self.Equipa" Multiplicity="1" />
+    <End Role="IntervencaoEquipa" Type="Self.IntervencaoEquipa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="IntervencaoEquipa">
+        <PropertyRef Name="id_equipa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Intervenc__id_in__408F9238">
+    <End Role="Intervencao" Type="Self.Intervencao" Multiplicity="1" />
+    <End Role="IntervencaoEquipa" Type="Self.IntervencaoEquipa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Intervencao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="IntervencaoEquipa">
+        <PropertyRef Name="id_intervencao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CompetenciaColaborador">
+    <End Role="Competencia" Type="Self.Competencia" Multiplicity="*" />
+    <End Role="ColaboradorEquipa" Type="Self.ColaboradorEquipa" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="L51NG7Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ativoes" EntityType="Self.Ativo" />
+    <EntitySet Name="ColaboradorEquipas" EntityType="Self.ColaboradorEquipa" />
+    <EntitySet Name="Competencias" EntityType="Self.Competencia" />
+    <EntitySet Name="Equipas" EntityType="Self.Equipa" />
+    <EntitySet Name="Funcionarios" EntityType="Self.Funcionario" />
+    <EntitySet Name="Intervencaos" EntityType="Self.Intervencao" />
+    <EntitySet Name="IntervencaoEquipas" EntityType="Self.IntervencaoEquipa" />
+    <EntitySet Name="Tipoes" EntityType="Self.Tipo" />
+    <AssociationSet Name="FK__Ativo__id_tipo__37FA4C37" Association="Self.FK__Ativo__id_tipo__37FA4C37">
+      <End Role="Tipo" EntitySet="Tipoes" />
+      <End Role="Ativo" EntitySet="Ativoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ativo__parent_id__361203C5" Association="Self.FK__Ativo__parent_id__361203C5">
+      <End Role="Ativo" EntitySet="Ativoes" />
+      <End Role="Ativo1" EntitySet="Ativoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Intervenc__ativo__3CBF0154" Association="Self.FK__Intervenc__ativo__3CBF0154">
+      <End Role="Ativo" EntitySet="Ativoes" />
+      <End Role="Intervencao" EntitySet="Intervencaos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Colaborad__id_eq__46486B8E" Association="Self.FK__Colaborad__id_eq__46486B8E">
+      <End Role="Equipa" EntitySet="Equipas" />
+      <End Role="ColaboradorEquipa" EntitySet="ColaboradorEquipas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ColaboradorE__id__45544755" Association="Self.FK__ColaboradorE__id__45544755">
+      <End Role="Funcionario" EntitySet="Funcionarios" />
+      <End Role="ColaboradorEquipa" EntitySet="ColaboradorEquipas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Intervenc__id_eq__3F9B6DFF" Association="Self.FK__Intervenc__id_eq__3F9B6DFF">
+      <End Role="Equipa" EntitySet="Equipas" />
+      <End Role="IntervencaoEquipa" EntitySet="IntervencaoEquipas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Intervenc__id_in__408F9238" Association="Self.FK__Intervenc__id_in__408F9238">
+      <End Role="Intervencao" EntitySet="Intervencaos" />
+      <End Role="IntervencaoEquipa" EntitySet="IntervencaoEquipas" />
+    </AssociationSet>
+    <AssociationSet Name="CompetenciaColaborador" Association="Self.CompetenciaColaborador">
+      <End Role="Competencia" EntitySet="Competencias" />
+      <End Role="ColaboradorEquipa" EntitySet="ColaboradorEquipas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

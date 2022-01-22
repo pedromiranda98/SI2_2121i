@@ -1,0 +1,7 @@
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Transactions\bin\Debug\Transaction.dll.config
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Transactions\bin\Debug\Transaction.dll
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Transactions\bin\Debug\Transaction.pdb
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Transactions\obj\Debug\Transactions.csproj.CoreCompileInputs.cache
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Transactions\obj\Debug\Transaction.dll
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Transactions\obj\Debug\Transaction.pdb
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Transactions\obj\Debug\Transactions.csproj.AssemblyReference.cache

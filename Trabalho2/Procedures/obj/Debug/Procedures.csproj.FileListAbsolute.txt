@@ -1,0 +1,60 @@
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\obj\Debug\Procedures.csproj.CoreCompileInputs.cache
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\Procedures.dll.config
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\Procedures.dll
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\Procedures.pdb
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\Services.dll
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\Transaction.dll
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\DAL.dll
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\Entities.dll
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\Services.pdb
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\Services.dll.config
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\Transaction.pdb
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\Transaction.dll.config
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\DAL.pdb
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\DAL.dll.config
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\Entities.pdb
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\bin\Debug\Entities.dll.config
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\obj\Debug\Procedures.csproj.CopyComplete
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\obj\Debug\Procedures.dll
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\obj\Debug\Procedures.pdb
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Procedures\obj\Debug\Procedures.csproj.AssemblyReference.cache
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\Procedures.dll.config
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\Procedures.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\Procedures.pdb
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\DAL.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\Entities.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\Services.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\Transaction.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\DAL.pdb
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\DAL.dll.config
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\Entities.pdb
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\Entities.dll.config
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\Services.pdb
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\Services.dll.config
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\Transaction.pdb
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\bin\Debug\Transaction.dll.config
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\obj\Debug\Procedures.csprojAssemblyReference.cache
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\obj\Debug\Procedures.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\obj\Debug\Procedures.csproj.CopyComplete
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\obj\Debug\Procedures.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Procedures\obj\Debug\Procedures.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\Procedures.dll.config
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\Procedures.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\Procedures.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\DAL.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\Entities.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\Services.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\Transaction.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\DAL.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\DAL.dll.config
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\Entities.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\Entities.dll.config
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\Services.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\Services.dll.config
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\Transaction.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\bin\Debug\Transaction.dll.config
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\obj\Debug\Procedures.csprojAssemblyReference.cache
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\obj\Debug\Procedures.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\obj\Debug\Procedures.csproj.CopyComplete
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\obj\Debug\Procedures.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Procedures\obj\Debug\Procedures.pdb

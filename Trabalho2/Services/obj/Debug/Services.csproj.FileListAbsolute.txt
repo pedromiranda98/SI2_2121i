@@ -1,0 +1,42 @@
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\bin\Debug\Services.dll.config
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\bin\Debug\Services.dll
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\bin\Debug\Services.pdb
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\bin\Debug\DAL.dll
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\bin\Debug\Entities.dll
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\bin\Debug\DAL.pdb
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\bin\Debug\DAL.dll.config
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\bin\Debug\Entities.pdb
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\bin\Debug\Entities.dll.config
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\obj\Debug\Services.dll
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\obj\Debug\Services.pdb
+C:\Users\inesn\OneDrive - Instituto Politécnico de Lisboa\Documentos\Faculdade\3ºano\5ºsemestre\SI2\2\TP2\Services\obj\Debug\Services.csproj.AssemblyReference.cache
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\bin\Debug\Services.dll.config
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\bin\Debug\Services.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\bin\Debug\Services.pdb
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\bin\Debug\DAL.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\bin\Debug\Entities.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\bin\Debug\DAL.pdb
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\bin\Debug\DAL.dll.config
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\bin\Debug\Entities.pdb
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\bin\Debug\Entities.dll.config
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\obj\Debug\Services.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Services\obj\Debug\Services.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\obj\Debug\Services.csprojAssemblyReference.cache
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\obj\Debug\Services.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\obj\Debug\Services.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\bin\Debug\Services.dll.config
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\bin\Debug\Services.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\bin\Debug\Services.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\bin\Debug\DAL.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\bin\Debug\Entities.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\bin\Debug\DAL.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\bin\Debug\DAL.dll.config
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\bin\Debug\Entities.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\bin\Debug\Entities.dll.config
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\obj\Debug\Services.csproj.CopyComplete

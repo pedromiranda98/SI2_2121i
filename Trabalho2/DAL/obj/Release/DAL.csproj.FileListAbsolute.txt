@@ -1,0 +1,11 @@
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\DAL\bin\Release\DAL.dll.config
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\DAL\bin\Release\DAL.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\DAL\bin\Release\DAL.pdb
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\DAL\bin\Release\Entities.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\DAL\bin\Release\Entities.pdb
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\DAL\bin\Release\Entities.dll.config
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\DAL\obj\Release\DAL.csprojAssemblyReference.cache
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\DAL\obj\Release\DAL.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\DAL\obj\Release\DAL.csproj.CopyComplete
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\DAL\obj\Release\DAL.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\DAL\obj\Release\DAL.pdb

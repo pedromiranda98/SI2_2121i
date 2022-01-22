@@ -1,0 +1,6 @@
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Transactions\bin\Release\Transaction.dll.config
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Transactions\bin\Release\Transaction.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Transactions\bin\Release\Transaction.pdb
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Transactions\obj\Release\Transactions.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Transactions\obj\Release\Transaction.dll
+C:\Users\pedro\Desktop\Universidade\TPSI2-2021SV-Grupo12TFase2\TPSI2-2021SV-Grupo12TFase2\Transactions\obj\Release\Transaction.pdb
