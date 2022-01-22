@@ -4,7 +4,8 @@ GO
 CREATE OR ALTER PROCEDURE updateTeamElements
 		@id numeric(9),
 		@id_equipa numeric(5),
-		@id_competencia numeric(9)
+		@id_competencia numeric(9),
+		@delete_or_add  int
 AS
 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 	BEGIN TRANSACTION 
@@ -17,19 +18,27 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 					PRINT('Employee does not exist in the database');
 				ELSE
 				BEGIN
-					IF EXISTS (SELECT * FROM ColaboradorEquipa WHERE id = @id)
+					IF EXISTS (SELECT * FROM ColaboradorEquipa WHERE id = @id ) AND (@delete_or_add=0)
 					BEGIN
 						DELETE FROM CompetenciaColaborador WHERE id_colaborador = @id
 						DELETE FROM ColaboradorEquipa WHERE id = @id
 						UPDATE Equipa SET n_elementos = n_elementos-1 WHERE id = @id_equipa
 						PRINT('Employee deleted from the team')
 					END
-					ELSE
+					ELSE IF NOT EXISTS (SELECT * FROM ColaboradorEquipa WHERE id = @id ) AND (@delete_or_add=1)
 					BEGIN
 						INSERT INTO ColaboradorEquipa(id, id_equipa) VALUES (@id, @id_equipa)
 						INSERT INTO CompetenciaColaborador(id_competencia, id_colaborador, id_equipa) VALUES (@id_competencia, @id, @id_equipa)
 						UPDATE Equipa SET n_elementos = n_elementos+1 WHERE id = @id_equipa
 						PRINT('Employee added to the team')
+					END
+					ELSE IF NOT EXISTS (SELECT * FROM ColaboradorEquipa WHERE id = @id ) AND (@delete_or_add=0)
+					BEGIN
+						PRINT('Employee not in this team')	
+					END
+					ELSE
+					BEGIN
+						Print('Employee already in the team')
 					END
 				END
 			END
@@ -51,7 +60,8 @@ SELECT * FROM Funcionario
 
 --UPDATE Equipa SET n_elementos = 2 WHERE id = 30000
 
--- Já existente (Apaga os registos com estes dados)
-EXEC updateTeamElements @id = 111222333, @id_equipa = 30000, @id_competencia = 123
--- Não existente (Insere os dados nas tabelas)
-EXEC updateTeamElements @id = 111222555, @id_equipa = 30000, @id_competencia = 123
+-- Adiciona
+EXEC updateTeamElements @id = 111222333, @id_equipa = 30000, @id_competencia = 123, @delete_or_add = 1
+
+-- Apaga
+EXEC updateTeamElements @id = 111222555, @id_equipa = 30000, @id_competencia = 123, @delete_or_add = 0
