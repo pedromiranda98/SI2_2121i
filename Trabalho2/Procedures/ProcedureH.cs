@@ -1,11 +1,7 @@
 ﻿using Services;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Transactions;
 
 namespace Procedures
@@ -18,7 +14,7 @@ namespace Procedures
         {
             cs = Session.GetConnectionString();
         }
-        public void createPlayer(string nomeJog, string item, string tipoJog, string usernameJog, string senhaJog, DateTime dt_nascimentoJog,decimal pontuacaoJog , int nivelJog, string cla)
+        public void updateTeamElements(decimal id , decimal id_equipa, decimal id_competencia, int delete_or_add )
         {
             try
             {
@@ -27,30 +23,20 @@ namespace Procedures
                     using (SqlConnection sqlConnection = new SqlConnection(cs))
                     {
                         sqlConnection.Open();
-                        using (SqlCommand sqlCommand = new SqlCommand("createPlayer", sqlConnection))
+                        using (SqlCommand sqlCommand = new SqlCommand("updateTeamElements", sqlConnection))
                         {
                             sqlCommand.CommandType = CommandType.StoredProcedure;
 
-                            SqlParameter p1 = new SqlParameter("@nomeJog", nomeJog);
-                            SqlParameter p2 = new SqlParameter("@item", item);
-                            SqlParameter p3 = new SqlParameter("@tipoJog", tipoJog);
-                            SqlParameter p4 = new SqlParameter("@usernameJog", usernameJog);
-                            SqlParameter p5 = new SqlParameter("@senhaJog", senhaJog);
-                            SqlParameter p6 = new SqlParameter("@dt_nascimentoJog", dt_nascimentoJog);
-                            SqlParameter p7 = new SqlParameter("@pontuacaoJog", pontuacaoJog);
-                            SqlParameter p8 = new SqlParameter("@nivelJog", nivelJog);
-                            SqlParameter p9 = new SqlParameter("@cla", cla);
+                            SqlParameter p1 = new SqlParameter("@id", id);
+                            SqlParameter p2 = new SqlParameter("@id_equipa", id_equipa);
+                            SqlParameter p3 = new SqlParameter("@id_competencia", id_competencia);
+                            SqlParameter p4 = new SqlParameter("@delete_or_add", delete_or_add);
 
 
                             sqlCommand.Parameters.Add(p1);
                             sqlCommand.Parameters.Add(p2);
                             sqlCommand.Parameters.Add(p3);
                             sqlCommand.Parameters.Add(p4);
-                            sqlCommand.Parameters.Add(p5);
-                            sqlCommand.Parameters.Add(p6);
-                            sqlCommand.Parameters.Add(p7);
-                            sqlCommand.Parameters.Add(p8);
-                            sqlCommand.Parameters.Add(p9);
 
                             sqlCommand.ExecuteNonQuery();
                         }

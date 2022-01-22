@@ -64,6 +64,12 @@ namespace SI2_Trab2
             new InicialProcedure().ResetDB();
 
             ProcedureE procedure = new ProcedureE();
+            ProcedureF procedure1 = new ProcedureF();
+            ProcedureH procedure2 = new ProcedureH();
+            //procedure1.createIntervention(000000001, (decimal)28.10, Convert.ToDateTime("2000-11-10"), Convert.ToDateTime("2000-11-15"), 5, "avaria");
+            procedure2.updateTeamElements(111222555, 30000, 123, 0);
+            procedure2.updateTeamElements(111222555, 30000, 123, 1);
+
 
             Console.WriteLine(procedure.GetAvailableTeam("ola"));
 

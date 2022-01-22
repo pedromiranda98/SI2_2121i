@@ -21,9 +21,9 @@ namespace Procedures
         {
             cs = Session.GetConnectionString();
         }
-        public int GetAvailableTeam(string desc)
+        public decimal GetAvailableTeam(string desc)
         {
-            var idEquipa=0;
+            decimal idEquipa=0;
             try
             {
                 using (TransactionScope ts = Transaction.Ts.GetTsReadCommitted())
@@ -31,17 +31,14 @@ namespace Procedures
                     using (SqlConnection sqlConnection = new SqlConnection(cs))
                     {
                         sqlConnection.Open();
-                        using (SqlCommand sqlCommand = new SqlCommand("select * from dbo.getAvailableTeam(@interv_desc)", sqlConnection))
+                        using (SqlCommand sqlCommand = new SqlCommand("select dbo.getAvailableTeam(@interv_desc)", sqlConnection))
+                        //using (SqlCommand sqlCommand = new SqlCommand("select * from Ativo", sqlConnection))
                         {
                             sqlCommand.CommandType = CommandType.Text;
-                            SqlParameter nomeClaParam = sqlCommand.Parameters.Add(new SqlParameter("@interv_desc", desc));
-                            using (SqlDataReader sqlDataReader = sqlCommand.ExecuteReader())
-                            {
-                                while (sqlDataReader.Read())
-                                {
-                                    idEquipa = sqlDataReader.SafeGet<int>(0);
-                                }
-                            }
+                            SqlParameter descParam = sqlCommand.Parameters.Add(new SqlParameter("@interv_desc", desc));
+
+                            idEquipa = (decimal)sqlCommand.ExecuteScalar();
+
                         }
                         sqlConnection.Close();
                     }

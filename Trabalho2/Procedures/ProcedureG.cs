@@ -10,7 +10,7 @@ using System.Transactions;
 
 namespace Procedures
 {
-   public class ProcedureG
+    public class ProcedureG
     {
         private readonly string cs;
 
@@ -18,7 +18,7 @@ namespace Procedures
         {
             cs = Session.GetConnectionString();
         }
-        public void AddItem(int id_jogador, string nome_item)
+        public void addNewTeam(string localizacao)
         {
             try
             {
@@ -27,16 +27,13 @@ namespace Procedures
                     using (SqlConnection sqlConnection = new SqlConnection(cs))
                     {
                         sqlConnection.Open();
-                        using (SqlCommand sqlCommand = new SqlCommand("AddItem", sqlConnection))
+                        using (SqlCommand sqlCommand = new SqlCommand("addNewTeam", sqlConnection))
                         {
                             sqlCommand.CommandType = CommandType.StoredProcedure;
 
-                            SqlParameter p1 = new SqlParameter("@id_jogador", id_jogador);
-                            SqlParameter p2 = new SqlParameter("@nome_item", nome_item);
-
+                            SqlParameter p1 = new SqlParameter("@localizacao", localizacao);
 
                             sqlCommand.Parameters.Add(p1);
-                            sqlCommand.Parameters.Add(p2);
 
                             sqlCommand.ExecuteNonQuery();
                         }
@@ -54,4 +51,3 @@ namespace Procedures
         }
     }
 }
-
