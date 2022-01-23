@@ -1,4 +1,4 @@
-﻿/*using Entities;
+﻿using Entities;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class ClaMapper
+    public class EquipaMapper
     {
         private String cs;
-        public ClaMapper()
+        public EquipaMapper()
         {
             cs = ConfigurationManager.ConnectionStrings["base dados"].ConnectionString;
             if (cs == null)
@@ -22,15 +22,15 @@ namespace DAL
             }
         }
 
-        public List<Cla> GetClas()
+        public List<Equipa> GetEquipa()
         {
-            var clas = new List<Cla>();
+            var equipas = new List<Equipa>();
             try
             {
                 using (SqlConnection sqlConnection = new SqlConnection(cs))
                 {
                     sqlConnection.Open();
-                    using (SqlCommand sqlCommand = new SqlCommand("select * from CLA", sqlConnection))
+                    using (SqlCommand sqlCommand = new SqlCommand("select * from Equipa", sqlConnection))
                     {
                         sqlCommand.CommandType = CommandType.Text;
 
@@ -38,14 +38,15 @@ namespace DAL
                         {
                             while (sqlDataReader.Read())
                             {
-                                Cla c = new Cla
+                                Equipa equipa = new Equipa
                                 {
-                                    nome = sqlDataReader.SafeGet<string>(0),
-                                    pontuacao = sqlDataReader.SafeGet<decimal>(1),
-                                    max_jog = sqlDataReader.SafeGet<int>(2)
+                                    id = sqlDataReader.SafeGet<int>(0),
+                                    localizacao = sqlDataReader.SafeGet<string>(1),
+                                    n_elemento = sqlDataReader.SafeGet<int>(2),
+                                    intervencoes_atribuidas = sqlDataReader.SafeGet<int>(3)
                                 };
 
-                                clas.Add(c);
+                                equipas.Add(equipa);
                             }
                         }
                     }
@@ -56,8 +57,8 @@ namespace DAL
                 Console.WriteLine(exception.Message);
                 throw exception;
             }
-            return clas;
+            return equipas;
         }
     }
-}*/
+}
  

@@ -63,15 +63,21 @@ namespace SI2_Trab2
         {
             new InicialProcedure().ResetDB();
 
-            ProcedureE procedure = new ProcedureE();
-            ProcedureF procedure1 = new ProcedureF();
-            ProcedureH procedure2 = new ProcedureH();
-            //procedure1.createIntervention(000000001, (decimal)28.10, Convert.ToDateTime("2000-11-10"), Convert.ToDateTime("2000-11-15"), 5, "avaria");
-            procedure2.updateTeamElements(111222555, 30000, 123, 0);
-            procedure2.updateTeamElements(111222555, 30000, 123, 1);
+            ProcedureE ProdE = new ProcedureE();
+            ProcedureF ProdF = new ProcedureF();
+            ProcedureFWithoutSP ProdFWSP = new ProcedureFWithoutSP();
+            ProcedureG ProdG = new ProcedureG();
+            ProcedureH ProdH = new ProcedureH();
+            ProcedureI ProdI = new ProcedureI();
 
+            //Console.WriteLine(ProdE.GetAvailableTeam("ola"));
+            //ProdF.createIntervention(000000001, (decimal)28.10, Convert.ToDateTime("2000-11-10"), Convert.ToDateTime("2000-11-15"), 5, "avaria");
+            ProdFWSP.createIntervention(000000001, (decimal)28.10, Convert.ToDateTime("2000-11-10"), Convert.ToDateTime("2000-11-15"), 5, "avaria");
+            //ProdG.addNewTeam("Moita");
+            //ProdH.updateTeamElements(111222555, 30000, 123, 0);
+            //ProdH.updateTeamElements(111222555, 30000, 123, 1);
+            //Console.WriteLine(ProdI.ListInterByYear(Convert.ToDateTime("2017-01-01").Year));
 
-            Console.WriteLine(procedure.GetAvailableTeam("ola"));
 
         }
 

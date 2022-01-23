@@ -19,9 +19,8 @@ namespace Procedures
         {
             cs = Session.GetConnectionString();
         }
-        public DataTable InfoJogador()
+        public DataTable ListInterByYear(int ano)
         {
-            //var jogadores = new List<Jog_registado>();
             try
             {
                 DataTable table = new DataTable();
@@ -31,7 +30,8 @@ namespace Procedures
                     using (SqlConnection sqlConnection = new SqlConnection(cs))
                     {
                         sqlConnection.Open();
-                        using (SqlCommand sqlCommand = new SqlCommand("select * from InfoJogador", sqlConnection))
+                        using (SqlCommand sqlCommand = new SqlCommand("select dbo.ListInterByYear(@ano)", sqlConnection))
+                        //using (SqlCommand sqlCommand = new SqlCommand("select * from ListInterByYear", sqlConnection))
                         {
                             table.Load(sqlCommand.ExecuteReader());
                         }

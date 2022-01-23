@@ -40,3 +40,17 @@ C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\bin\Debug\DAL.d
 C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\bin\Debug\Entities.pdb
 C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\bin\Debug\Entities.dll.config
 C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho2\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\bin\Debug\Services.dll.config
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\bin\Debug\Services.dll
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\bin\Debug\Services.pdb
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\bin\Debug\DAL.dll
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\bin\Debug\Entities.dll
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\bin\Debug\DAL.pdb
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\bin\Debug\DAL.dll.config
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\bin\Debug\Entities.pdb
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\bin\Debug\Entities.dll.config
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\obj\Debug\Services.csproj.AssemblyReference.cache
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\obj\Debug\Services.dll
+C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Services\obj\Debug\Services.pdb
