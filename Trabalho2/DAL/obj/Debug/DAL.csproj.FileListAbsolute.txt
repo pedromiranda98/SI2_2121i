@@ -42,3 +42,14 @@ C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho
 C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\DAL\obj\Debug\DAL.dll
 C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\DAL\obj\Debug\DAL.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\DAL\bin\Debug\DAL.dll.config
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\DAL\bin\Debug\DAL.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\DAL\bin\Debug\DAL.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\DAL\bin\Debug\Entities.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\DAL\bin\Debug\Entities.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\DAL\bin\Debug\Entities.dll.config
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\DAL\obj\Debug\DAL.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\DAL\obj\Debug\DAL.pdb

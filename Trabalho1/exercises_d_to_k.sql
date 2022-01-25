@@ -130,23 +130,26 @@ SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED -- DOUBLE CHECK
 				BEGIN
 					PRINT('Ativo ID does not exist in the database')
 				END 
-				DECLARE @estado varchar(20)		-- os valores possíveis sao “por atribuir”, “em análise”, “em execução” ou “concluído”
-				DECLARE @id_equipa numeric(5)
-				DECLARE @id numeric(9)
-				SET @id = dbo.generateInterId()
-				SET @id_equipa = dbo.getAvailableTeam(@descricao)
-				IF (@id_equipa is null)
-				BEGIN
-					PRINT('There is no team available at the moment');
-					SET @estado = 'por atribuir'
-					INSERT INTO  Intervencao(id, descricao, estado, valor, data_inicio, data_fim, periodicidade, ativo_id) VALUES (@id, @descricao, @estado, @valor, @data_inicio, @data_fim, @periodicidade, @ativo_id)
-				END
 				ELSE
 				BEGIN
-					SET @estado = 'em análise'
-					INSERT INTO Intervencao(id, descricao, estado, valor, data_inicio, data_fim, periodicidade, ativo_id) VALUES (@id, @descricao, @estado, @valor, @data_inicio, @data_fim, @periodicidade, @ativo_id)
-					INSERT INTO IntervencaoEquipa(data_inicio, data_fim, id_equipa, id_intervencao) VALUES (@data_inicio, @data_fim, @id_equipa, @id)
-					UPDATE Equipa SET intervencoes_atribuidas = intervencoes_atribuidas+1 WHERE id = @id_equipa
+					DECLARE @estado varchar(20)		-- os valores possíveis sao “por atribuir”, “em análise”, “em execução” ou “concluído”
+					DECLARE @id_equipa numeric(5)
+					DECLARE @id numeric(9)
+					SET @id = dbo.generateInterId()
+					SET @id_equipa = dbo.getAvailableTeam(@descricao)
+					IF (@id_equipa is null)
+					BEGIN
+						PRINT('There is no team available at the moment');
+						SET @estado = 'por atribuir'
+						INSERT INTO  Intervencao(id, descricao, estado, valor, data_inicio, data_fim, periodicidade, ativo_id) VALUES (@id, @descricao, @estado, @valor, @data_inicio, @data_fim, @periodicidade, @ativo_id)
+					END
+					ELSE
+					BEGIN
+						SET @estado = 'em análise'
+						INSERT INTO Intervencao(id, descricao, estado, valor, data_inicio, data_fim, periodicidade, ativo_id) VALUES (@id, @descricao, @estado, @valor, @data_inicio, @data_fim, @periodicidade, @ativo_id)
+						INSERT INTO IntervencaoEquipa(data_inicio, data_fim, id_equipa, id_intervencao) VALUES (@data_inicio, @data_fim, @id_equipa, @id)
+						UPDATE Equipa SET intervencoes_atribuidas = intervencoes_atribuidas+1 WHERE id = @id_equipa
+					END
 				END
 			END
 		COMMIT;

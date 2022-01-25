@@ -18,3 +18,10 @@ C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho
 C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
 C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Entities\obj\Debug\Entities.dll
 C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Entities\obj\Debug\Entities.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Entities\bin\Debug\Entities.dll.config
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Entities\bin\Debug\Entities.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Entities\bin\Debug\Entities.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Entities\obj\Debug\Entities.csprojAssemblyReference.cache
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Entities\obj\Debug\Entities.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Entities\obj\Debug\Entities.pdb

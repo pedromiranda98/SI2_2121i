@@ -12,3 +12,10 @@ C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho
 C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Transactions\obj\Debug\Transactions.csproj.CoreCompileInputs.cache
 C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Transactions\obj\Debug\Transaction.dll
 C:\Users\ricar\OneDrive\Documents\Universidade\21-22\SI2\Repo\SI2_2122i\Trabalho2\Transactions\obj\Debug\Transaction.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Transactions\bin\Debug\Transaction.dll.config
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Transactions\bin\Debug\Transaction.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Transactions\bin\Debug\Transaction.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Transactions\obj\Debug\Transactions.csprojAssemblyReference.cache
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Transactions\obj\Debug\Transactions.csproj.CoreCompileInputs.cache
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Transactions\obj\Debug\Transaction.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\Transactions\obj\Debug\Transaction.pdb

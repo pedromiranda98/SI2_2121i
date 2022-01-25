@@ -22,6 +22,8 @@ namespace Procedures
         }
         public void createIntervention(int ativo_id, decimal valor, DateTime data_inicio, DateTime data_fim, int periodicidade, string descricao)
         {
+            var ativoState = false;
+            var estado = "por atribuir";
             try
             {
                 using (TransactionScope ts = Transaction.Ts.GetTsReadCommitted())
@@ -29,40 +31,97 @@ namespace Procedures
                     using (SqlConnection sqlConnection = new SqlConnection(cs))
                     {
                         sqlConnection.Open();
-                        using (SqlCommand sqlCommand = new SqlCommand("p_criaInter", sqlConnection))
+
+                        using (SqlCommand sqlCommand = new SqlCommand("select id from Ativo where id = @ativo_id", sqlConnection))
                         {
                             sqlCommand.CommandType = CommandType.Text;
+                            SqlParameter idParam = sqlCommand.Parameters.Add(new SqlParameter("@ativo_id", ativo_id));
 
-                            SqlParameter p1 = sqlCommand.Parameters.Add(new SqlParameter("@ativo_id", ativo_id));
-                            SqlParameter p2 = sqlCommand.Parameters.Add(new SqlParameter("@valor", valor));
-                            SqlParameter p3 = sqlCommand.Parameters.Add(new SqlParameter("@data_inicio", data_inicio));
-                            SqlParameter p4 = sqlCommand.Parameters.Add(new SqlParameter("@data_fim", data_fim));
-                            SqlParameter p5 = sqlCommand.Parameters.Add(new SqlParameter("@periodicidade", periodicidade));
-                            SqlParameter p6 = sqlCommand.Parameters.Add(new SqlParameter("@descricao", descricao));
-
-                            sqlCommand.ExecuteNonQuery();
+                            if(sqlCommand.ExecuteScalar() != null)
+                            {
+                                ativoState = true;
+                            }
                         }
 
-                        /*using (SqlCommand sqlCommand = new SqlCommand("select * from dbo.getCla(@nomeCla)", sqlConnection))
+                        if (ativoState)
                         {
-                            sqlCommand.CommandType = CommandType.Text;
-                            SqlParameter nomeClaParam = sqlCommand.Parameters.Add(new SqlParameter("@nomeCla", nomeCla));
-                            using (SqlDataReader sqlDataReader = sqlCommand.ExecuteReader())
+                            decimal interId = 0;
+                            using (SqlCommand sqlCommand = new SqlCommand("select dbo.generateInterId()", sqlConnection))
                             {
-                                while (sqlDataReader.Read())
-                                {
-                                    Cla cc = new Cla
-                                    {
+                                sqlCommand.CommandType = CommandType.Text;
+                                interId = (decimal)sqlCommand.ExecuteScalar();
+                            }
 
-                                        nome = sqlDataReader.SafeGet<string>(0),
-                                        pontuacao = sqlDataReader.SafeGet<decimal>(1),
-                                        max_jog = sqlDataReader.SafeGet<int>(2),
-                                    };
-                                    
-                                    clas.Add(cc);
+                            sqlConnection.Close();
+                            var getAvailableTeam = new ProcedureE();
+                            var teamId = getAvailableTeam.GetAvailableTeam(descricao);
+
+                            sqlConnection.Open();
+
+                            if (teamId != 0)
+                            {
+                                estado = "em análise";
+                                using (SqlCommand sqlCommand = new SqlCommand("INSERT INTO  Intervencao(id, descricao, estado, valor, data_inicio, data_fim, periodicidade, ativo_id) VALUES (@id, @descricao, @estado, @valor, @data_inicio, @data_fim, @periodicidade, @ativo_id)", sqlConnection))
+                                {
+                                    sqlCommand.CommandType = CommandType.Text;
+
+                                    SqlParameter p1 = sqlCommand.Parameters.Add(new SqlParameter("@id", interId));
+                                    SqlParameter p2 = sqlCommand.Parameters.Add(new SqlParameter("@descricao", descricao));
+                                    SqlParameter p3 = sqlCommand.Parameters.Add(new SqlParameter("@estado", estado));
+                                    SqlParameter p4 = sqlCommand.Parameters.Add(new SqlParameter("@valor", valor));
+                                    SqlParameter p5 = sqlCommand.Parameters.Add(new SqlParameter("@data_inicio", data_inicio));
+                                    SqlParameter p6 = sqlCommand.Parameters.Add(new SqlParameter("@data_fim", data_fim));
+                                    SqlParameter p7 = sqlCommand.Parameters.Add(new SqlParameter("@periodicidade", periodicidade));
+                                    SqlParameter p8 = sqlCommand.Parameters.Add(new SqlParameter("@ativo_id", ativo_id));
+
+                                    sqlCommand.ExecuteNonQuery();
+                                }
+
+                                using (SqlCommand sqlCommand = new SqlCommand("INSERT INTO IntervencaoEquipa(data_inicio, data_fim, id_equipa, id_intervencao) VALUES (@data_inicio, @data_fim, @id_equipa, @id)", sqlConnection))
+                                {
+                                    sqlCommand.CommandType = CommandType.Text;
+
+                                    SqlParameter p1 = sqlCommand.Parameters.Add(new SqlParameter("@id", interId));
+                                    SqlParameter p2 = sqlCommand.Parameters.Add(new SqlParameter("@data_inicio", data_inicio));
+                                    SqlParameter p3 = sqlCommand.Parameters.Add(new SqlParameter("@data_fim", data_fim));
+                                    SqlParameter p4 = sqlCommand.Parameters.Add(new SqlParameter("@id_equipa", teamId));
+
+                                    sqlCommand.ExecuteNonQuery();
+                                }
+
+                                using (SqlCommand sqlCommand = new SqlCommand("UPDATE Equipa SET intervencoes_atribuidas = intervencoes_atribuidas+1 WHERE id = @id_equipa", sqlConnection))
+                                {
+                                    sqlCommand.CommandType = CommandType.Text;
+
+                                    SqlParameter p1 = sqlCommand.Parameters.Add(new SqlParameter("@id_equipa", teamId));
+
+                                    sqlCommand.ExecuteNonQuery();
                                 }
                             }
-                        }*/
+
+                            else
+                            {
+                                using (SqlCommand sqlCommand = new SqlCommand("INSERT INTO  Intervencao(id, descricao, estado, valor, data_inicio, data_fim, periodicidade, ativo_id) VALUES (@id, @descricao, @estado, @valor, @data_inicio, @data_fim, @periodicidade, @ativo_id)", sqlConnection))
+                                {
+                                    sqlCommand.CommandType = CommandType.Text;
+
+                                    SqlParameter p1 = sqlCommand.Parameters.Add(new SqlParameter("@id", interId));
+                                    SqlParameter p2 = sqlCommand.Parameters.Add(new SqlParameter("@descricao", descricao));
+                                    SqlParameter p3 = sqlCommand.Parameters.Add(new SqlParameter("@estado", estado));
+                                    SqlParameter p4 = sqlCommand.Parameters.Add(new SqlParameter("@valor", valor));
+                                    SqlParameter p5 = sqlCommand.Parameters.Add(new SqlParameter("@data_fim", data_fim));
+                                    SqlParameter p6 = sqlCommand.Parameters.Add(new SqlParameter("@periodicidade", periodicidade));
+                                    SqlParameter p7 = sqlCommand.Parameters.Add(new SqlParameter("@descricao", descricao));
+                                    SqlParameter p8 = sqlCommand.Parameters.Add(new SqlParameter("@ativo_id", ativo_id));
+
+                                    sqlCommand.ExecuteNonQuery();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.Write("Ativo ID does not exist in the database");
+                        }
                         sqlConnection.Close();
                     }
                     ts.Complete();
