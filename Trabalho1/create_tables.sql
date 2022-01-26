@@ -1,7 +1,3 @@
-IF(db_id(N'Maintain4ver') IS NULL) CREATE DATABASE Maintain4ver; -- Create the database if it doesn't exist yet
-
-USE Maintain4ver;
-
 GO
 
 CREATE OR ALTER PROCEDURE CreateTables

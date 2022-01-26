@@ -2,6 +2,10 @@
 
 --------------------------------------------------------------EXERCICIO E--------------------------------------------------------------
 
+DECLARE @id_equipa numeric(5)
+SET @id_equipa = dbo.getAvailableTeam('description')
+PRINT(@id_equipa)
+
 --------------------------------------------------------------EXERCICIO F--------------------------------------------------------------
 
 EXEC p_criaInter @ativo_id = 000000001, @valor = 28.10 , @data_inicio = '2000-11-10', @data_fim = '2000-11-15', @periodicidade = 5, @descricao = 'avaria'
@@ -28,13 +32,20 @@ SELECT * FROM ColaboradorEquipa;
 SELECT * FROM CompetenciaColaborador;
 SELECT * FROM Funcionario
 
---UPDATE Equipa SET n_elementos = 2 WHERE id = 30000
-
--- Adiciona
-EXEC updateTeamElements @id = 111222333, @id_equipa = 30000, @id_competencia = 123, @delete_or_add = 1
-
 -- Apaga
 EXEC updateTeamElements @id = 111222555, @id_equipa = 30000, @id_competencia = 123, @delete_or_add = 0
+-- Não pertence a essa equipa
+EXEC updateTeamElements @id = 111222444, @id_equipa = 20000, @id_competencia = 123, @delete_or_add = 0
+-- Não existe na base de dados
+EXEC updateTeamElements @id = 111222999, @id_equipa = 30000, @id_competencia = 123, @delete_or_add = 0
+
+-- Adiciona
+EXEC updateTeamElements @id = 111222555, @id_equipa = 30000, @id_competencia = 123, @delete_or_add = 1
+-- Já pertence a uma equipa
+EXEC updateTeamElements @id = 111222444, @id_equipa = 20000, @id_competencia = 123, @delete_or_add = 1
+-- Já pertence a essa equipa
+EXEC updateTeamElements @id = 111222333, @id_equipa = 30000, @id_competencia = 123, @delete_or_add = 1
+
 
 --------------------------------------------------------------EXERCICIO I--------------------------------------------------------------
 

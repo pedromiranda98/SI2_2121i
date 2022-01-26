@@ -61,8 +61,8 @@ GO
 
 -------------------------------REMOVER PESSOA-------------------------------
 GO
-	CREATE OR ALTER PROCEDURE RemovePerson
-		@id numeric(9,0)
+CREATE OR ALTER PROCEDURE RemovePerson
+	@id numeric(9,0)
 AS 
 SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED 
 BEGIN TRANSACTION 
@@ -91,10 +91,10 @@ AS
 		DECLARE @codigo numeric(5,0) 
 		IF EXISTS (SELECT * FROM Equipa WHERE intervencoes_atribuidas<3)
 			BEGIN
-				set @codigo = (SELECT TOP(1) id FROM Equipa WHERE intervencoes_atribuidas < 3)
+				SET @codigo = (SELECT TOP(1) id FROM Equipa ORDER BY n_elementos ASC)
 			END
 		RETURN @codigo
-	END 
+	END
 GO
 
 --------------------------------------------------------------EXERCICIO F--------------------------------------------------------------
@@ -219,7 +219,7 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
                     PRINT('Employee does not exist in the database');
                 ELSE
                 BEGIN
-                    IF EXISTS (SELECT * FROM ColaboradorEquipa WHERE id = @id ) AND (@delete_or_add=0)
+                    IF EXISTS (SELECT * FROM ColaboradorEquipa WHERE id = @id AND id_equipa = @id_equipa) AND (@delete_or_add=0)
                     BEGIN
                         DELETE FROM CompetenciaColaborador WHERE id_colaborador = @id
                         DELETE FROM ColaboradorEquipa WHERE id = @id
@@ -237,9 +237,17 @@ SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
                     BEGIN
                         PRINT('Employee not in this team')    
                     END
+					ELSE IF EXISTS (SELECT * FROM ColaboradorEquipa WHERE id = @id AND id_equipa != @id_equipa) AND (@delete_or_add=0)
+                    BEGIN
+                        PRINT('Inserted team is incorrect')    
+                    END
+					ELSE IF EXISTS (SELECT * FROM ColaboradorEquipa WHERE id = @id AND id_equipa != @id_equipa) AND (@delete_or_add=1)
+                    BEGIN
+                        PRINT('Employee is already part of a team')    
+                    END
                     ELSE
                     BEGIN
-                        Print('Employee already in the team')
+                        Print('Employee is already in that team')
                     END
                 END
             END
