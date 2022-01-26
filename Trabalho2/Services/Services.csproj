@@ -49,9 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EquipaService.cs" />
-    <Compile Include="ItemJogService.cs" />
-    <Compile Include="JogRegistadoService.cs" />
-    <Compile Include="PartidaService.cs" />
+    <Compile Include="AtivoService.cs" />
+    <Compile Include="IntervencaoService.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

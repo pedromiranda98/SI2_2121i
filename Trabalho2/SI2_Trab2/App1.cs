@@ -13,7 +13,15 @@ namespace SI2_Trab2
     {
         public enum OPTIONS
         {
-           NONE
+           NONE,
+           Exit,
+           getAvailableTeam,
+           criaInter,
+           createTeam,
+           addOrRemoveTeamElement,
+           listIntervFromYear,
+           updateIntervState,
+           intervenctionResume
         };
 
         private delegate int DBMethod();
@@ -62,24 +70,28 @@ namespace SI2_Trab2
         public void Run()
         {
             new InicialProcedure().ResetDB();
+            OPTIONS userInput = OPTIONS.NONE;
+            do
+            {
+                Console.Clear();
+                userInput = DisplayMenu();
+                Console.Clear();
+                try
+                {
+                    funcs[userInput]();
+                    Console.WriteLine("Press any key to return.");
+                    Console.ReadKey();
+                }
+                catch (KeyNotFoundException ex)
+                {
+                    //Nothing to do. The option was not a valid one. Read another.
+                }
 
-            ProcedureE ProdE = new ProcedureE();
-            ProcedureF ProdF = new ProcedureF();
-            ProcedureFWithoutSP ProdFWSP = new ProcedureFWithoutSP();
-            ProcedureG ProdG = new ProcedureG();
-            ProcedureH ProdH = new ProcedureH();
-            ProcedureI ProdI = new ProcedureI();
-
-            //Console.WriteLine(ProdE.GetAvailableTeam("ola"));
-            //ProdF.createIntervention(000000001, (decimal)28.10, Convert.ToDateTime("2000-11-10"), Convert.ToDateTime("2000-11-15"), 5, "avaria");
-            ProdFWSP.createIntervention(000000001, (decimal)28.10, Convert.ToDateTime("2000-11-10"), Convert.ToDateTime("2000-11-15"), 5, "avaria");
-            //ProdG.addNewTeam("Moita");
-            //ProdH.updateTeamElements(111222555, 30000, 123, 0);
-            //ProdH.updateTeamElements(111222555, 30000, 123, 1);
-            //Console.WriteLine(ProdI.ListInterByYear(Convert.ToDateTime("2017-01-01").Year));
-
-
+            } while (userInput != OPTIONS.Exit);
         }
+
+
+    }
 
         class MainClass
         {
@@ -89,4 +101,3 @@ namespace SI2_Trab2
             }
         }
     }
-}

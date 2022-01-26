@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Procedure1C.cs" />
     <Compile Include="InicialProcedure.cs" />
     <Compile Include="ProcedureE.cs" />
     <Compile Include="ProcedureFWithoutSP.cs" />

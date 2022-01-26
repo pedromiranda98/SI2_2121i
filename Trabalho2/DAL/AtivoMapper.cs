@@ -1,4 +1,4 @@
-﻿/*using Entities;
+﻿using Entities;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class ItemJogMapper
+    public class AtivoMapper
     {
         private String cs;
-        public ItemJogMapper()
+        public AtivoMapper()
         {
             cs = ConfigurationManager.ConnectionStrings["base dados"].ConnectionString;
             if (cs == null)
@@ -22,15 +22,15 @@ namespace DAL
             }
         }
 
-        public List<Item_jog> GetItensJog()
+        public List<Ativo> GetAtivos()
         {
-            var itens_jog = new List<Item_jog>();
+            var ativos = new List<Ativo>();
             try
             {
                 using (SqlConnection sqlConnection = new SqlConnection(cs))
                 {
                     sqlConnection.Open();
-                    using (SqlCommand sqlCommand = new SqlCommand("select * from ITEM_JOG", sqlConnection))
+                    using (SqlCommand sqlCommand = new SqlCommand("select * from Ativo", sqlConnection))
                     {
                         sqlCommand.CommandType = CommandType.Text;
 
@@ -38,15 +38,20 @@ namespace DAL
                         {
                             while (sqlDataReader.Read())
                             {
-                                Item_jog ij = new Item_jog
+                                Ativo ativo = new Ativo
                                 {
-                                    id_jogador = sqlDataReader.SafeGet<int>(0),
-                                    nome_item = sqlDataReader.SafeGet<string>(1),
-                                    quant = sqlDataReader.SafeGet<int>(2)
-                              
+                                    id = sqlDataReader.SafeGet<int>(0),
+                                    parent_id = sqlDataReader.SafeGet<int>(1),
+                                    nome = sqlDataReader.SafeGet<string>(2),
+                                    data_aquisicao = sqlDataReader.SafeGet<DateTime>(3),
+                                    marca = sqlDataReader.SafeGet<string>(4),
+                                    modelo = sqlDataReader.SafeGet<string>(5),
+                                    localizacao = sqlDataReader.SafeGet<string>(6),
+                                    estado = sqlDataReader.SafeGet<int>(7),
+                                    id_tipo = sqlDataReader.SafeGet<int>(8)
                                 };
 
-                                itens_jog.Add(ij);
+                                ativos.Add(ativo);
                             }
                         }
                     }
@@ -57,8 +62,8 @@ namespace DAL
                 Console.WriteLine(exception.Message);
                 throw exception;
             }
-            return itens_jog;
+            return ativos;
         }
     }
-}*/
+}
 

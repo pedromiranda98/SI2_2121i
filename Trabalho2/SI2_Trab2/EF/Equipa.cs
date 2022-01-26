@@ -7,28 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SI2_Trab2
+namespace SI2_Trab2.EF
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Funcionario
+    public partial class Equipa
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Funcionario()
+        public Equipa()
         {
             this.ColaboradorEquipas = new HashSet<ColaboradorEquipa>();
+            this.IntervencaoEquipas = new HashSet<IntervencaoEquipa>();
         }
     
         public decimal id { get; set; }
-        public string email { get; set; }
-        public Nullable<decimal> telemovel { get; set; }
-        public string nome { get; set; }
-        public Nullable<System.DateTime> data_nascimento { get; set; }
-        public string endereco { get; set; }
-        public string profissao { get; set; }
+        public string localizacao { get; set; }
+        public Nullable<int> n_elementos { get; set; }
+        public Nullable<int> intervencoes_atribuidas { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ColaboradorEquipa> ColaboradorEquipas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<IntervencaoEquipa> IntervencaoEquipas { get; set; }
     }
 }

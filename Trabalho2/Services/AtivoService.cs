@@ -1,4 +1,4 @@
-﻿/*using DAL;
+﻿using DAL;
 using Entities;
 using System;
 using System.Collections.Generic;
@@ -10,10 +10,10 @@ namespace Services
 {
     public class ItemJogService
     {
-        private ItemJogMapper itemJogserv = new ItemJogMapper();
-        public List<Item_jog> GetItem_Jogs()
+        private AtivoMapper ativoServ = new AtivoMapper();
+        public List<Ativo> getAtivos()
         {
-            return itemJogserv.GetItensJog();
+            return ativoServ.GetAtivos();
         }
     }
-}*/
+}

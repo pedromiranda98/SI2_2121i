@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class PartidaMapper
+    public class IntervenctionMapper
     {
         private String cs;
-        public PartidaMapper()
+        public IntervenctionMapper()
         {
             cs = ConfigurationManager.ConnectionStrings["base dados"].ConnectionString;
             if (cs == null)
@@ -22,15 +22,15 @@ namespace DAL
             }
         }
 
-        public List<CompetenciaColaborador> GetPartidas()
-        {
-            var partidas = new List<CompetenciaColaborador>();
+          public List<Intervencao> getIntervenction()
+          {
+            var intervencoes = new List<Intervencao>();
             try
             {
                 using (SqlConnection sqlConnection = new SqlConnection(cs))
                 {
                     sqlConnection.Open();
-                    using (SqlCommand sqlCommand = new SqlCommand("select * from Partida", sqlConnection))
+                    using (SqlCommand sqlCommand = new SqlCommand("select * from Intervencao", sqlConnection))
                     {
                         sqlCommand.CommandType = CommandType.Text;
 
@@ -38,20 +38,20 @@ namespace DAL
                         {
                             while (sqlDataReader.Read())
                             {
-                                CompetenciaColaborador p = new CompetenciaColaborador
+                                Intervencao interv = new Intervencao
                                 {
-                                    /*id = sqlDataReader.SafeGet<int>(0),
-                                    tipo = sqlDataReader.SafeGet<string>(1),
-                                    id1 = sqlDataReader.SafeGet<int>(2),
-                                    id2 = sqlDataReader.SafeGet<int>(3),
-                                    dataa = sqlDataReader.SafeGet<DateTime>(4),
-                                    resultado = sqlDataReader.SafeGet<string>(5),
-                                    id_estado = sqlDataReader.SafeGet<int>(6),
-                                    tempo = sqlDataReader.SafeGet <TimeSpan>(7)
-                                    */
+                                    id = sqlDataReader.SafeGet<int>(0),
+                                    descricao = sqlDataReader.SafeGet<string>(1),
+                                    estado = sqlDataReader.SafeGet<string>(2),
+                                    valor = sqlDataReader.SafeGet<decimal>(3),
+                                    data_inicio = sqlDataReader.SafeGet<DateTime>(4),
+                                    data_fim = sqlDataReader.SafeGet<DateTime>(5),
+                                    periodicidade = sqlDataReader.SafeGet<int>(6),
+                                    ativo_id = sqlDataReader.SafeGet<int>(7)
+                                
                                 };
 
-                                partidas.Add(p);
+                                intervencoes.Add(interv);
                             }
                         }
                     }
@@ -62,8 +62,8 @@ namespace DAL
                 Console.WriteLine(exception.Message);
                 throw exception;
             }
-            return partidas;
+            return intervencoes;
         }
     }
-
 }
+

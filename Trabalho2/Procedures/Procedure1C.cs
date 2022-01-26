@@ -12,7 +12,7 @@ using DAL;
 
 namespace Procedures
 {
-    class Procedure1C
+    class Procedure1C 
     {
         private readonly string cs;
 
@@ -20,28 +20,15 @@ namespace Procedures
         {
             cs = Session.GetConnectionString();
         }
-        public decimal GetAvailableTeam(string desc)
+        public void interAtribution(string desc) // a atribuição de uma equipa já se encontrava automatizada na realização do procedureE
         {
-            decimal idEquipa = 0;
             try
             {
                 using (TransactionScope ts = Transaction.Ts.GetTsReadCommitted())
                 {
-                    using (SqlConnection sqlConnection = new SqlConnection(cs))
-                    {
-                        sqlConnection.Open();
-                        using (SqlCommand sqlCommand = new SqlCommand("select dbo.getAvailableTeam(@interv_desc)", sqlConnection))
-                        //using (SqlCommand sqlCommand = new SqlCommand("select * from Ativo", sqlConnection))
-                        {
-                            sqlCommand.CommandType = CommandType.Text;
-                            SqlParameter descParam = sqlCommand.Parameters.Add(new SqlParameter("@interv_desc", desc));
+                    ProcedureF createInt = new ProcedureF();
 
-                            idEquipa = (decimal)sqlCommand.ExecuteScalar();
 
-                        }
-                        sqlConnection.Close();
-                    }
-                    ts.Complete();
                 }
             }
 
@@ -51,8 +38,6 @@ namespace Procedures
 
                 throw exception;
             }
-            return idEquipa;
         }
     }
-}
 }

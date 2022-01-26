@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SI2_Trab2
+namespace SI2_Trab2.EF
 {
     using System;
     using System.Data.Entity;

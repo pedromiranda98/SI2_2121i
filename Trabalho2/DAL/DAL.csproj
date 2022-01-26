@@ -49,10 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EquipaMapper.cs" />
-    <Compile Include="ItemJogMapper.cs" />
-    <Compile Include="JogRegistadoMapper.cs" />
+    <Compile Include="AtivoMapper.cs" />
+    <Compile Include="IntervenctionMapper.cs" />
     <Compile Include="Null_Ok.cs" />
-    <Compile Include="PartidaMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

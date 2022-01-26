@@ -7,23 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SI2_Trab2
+namespace SI2_Trab2.EF
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Tipo
+    public partial class ColaboradorEquipa
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tipo()
+        public ColaboradorEquipa()
         {
-            this.Ativoes = new HashSet<Ativo>();
+            this.Competencias = new HashSet<Competencia>();
         }
     
         public decimal id { get; set; }
-        public string descricao { get; set; }
+        public decimal id_equipa { get; set; }
     
+        public virtual Equipa Equipa { get; set; }
+        public virtual Funcionario Funcionario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ativo> Ativoes { get; set; }
+        public virtual ICollection<Competencia> Competencias { get; set; }
     }
 }
