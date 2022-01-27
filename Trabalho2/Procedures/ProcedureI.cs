@@ -30,9 +30,10 @@ namespace Procedures
                     using (SqlConnection sqlConnection = new SqlConnection(cs))
                     {
                         sqlConnection.Open();
-                        using (SqlCommand sqlCommand = new SqlCommand("select dbo.ListInterByYear(@ano)", sqlConnection))
-                        //using (SqlCommand sqlCommand = new SqlCommand("select * from ListInterByYear", sqlConnection))
+                        using (SqlCommand sqlCommand = new SqlCommand("select * from dbo.ListInterByYear(@ano)", sqlConnection))
                         {
+                            sqlCommand.CommandType = CommandType.Text;
+                            SqlParameter comm = sqlCommand.Parameters.Add(new SqlParameter("@ano", ano));
                             table.Load(sqlCommand.ExecuteReader());
                         }
                         

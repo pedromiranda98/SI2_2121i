@@ -85,3 +85,5 @@ C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\SI2_Tra
 C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\SI2_Trab2\obj\Debug\SI2_Trab2.csproj.CopyComplete
 C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\SI2_Trab2\obj\Debug\SI2_Trab2.exe
 C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\SI2_Trab2\obj\Debug\SI2_Trab2.pdb
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\SI2_Trab2\bin\Debug\ConsoleTables.dll
+C:\Users\pedro\Desktop\Universidade\2121i\SI2\Trabalho\Scripts\Trabalho2\SI2_Trab2\bin\Debug\ConsoleTables.pdb

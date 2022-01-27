@@ -20,8 +20,6 @@ namespace SI2_Trab2
            createTeam,
            addOrRemoveTeamElement,
            listIntervFromYear,
-           updateIntervState,
-           intervenctionResume
         };
 
         private delegate int DBMethod();
@@ -40,7 +38,12 @@ namespace SI2_Trab2
 
         private App()
         {
-
+            funcs = new Dictionary<OPTIONS, DBMethod>();
+            funcs.Add(OPTIONS.getAvailableTeam, UI.getAvailableTeam_UI.getAvailableTeam);
+            funcs.Add(OPTIONS.criaInter, UI.createIntervention_UI.createIntervention);
+            funcs.Add(OPTIONS.createTeam, UI.createTeam_UI.createTeam);
+            funcs.Add(OPTIONS.addOrRemoveTeamElement, UI.updateTeamElements_UI.updateTeamElements);
+            funcs.Add(OPTIONS.listIntervFromYear, UI.listInterventions_UI.listInterventions);
         }
 
         public OPTIONS DisplayMenu()
