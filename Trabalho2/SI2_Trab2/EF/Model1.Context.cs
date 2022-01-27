@@ -12,6 +12,8 @@ namespace SI2_Trab2.EF
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class L51NG7Entities : DbContext
     {
@@ -33,5 +35,178 @@ namespace SI2_Trab2.EF
         public virtual DbSet<Intervencao> Intervencaos { get; set; }
         public virtual DbSet<IntervencaoEquipa> IntervencaoEquipas { get; set; }
         public virtual DbSet<Tipo> Tipoes { get; set; }
+        public virtual DbSet<ResumoInter> ResumoInters { get; set; }
+    
+        public virtual int AddNewPerson(Nullable<decimal> id, string email, Nullable<decimal> telemovel, string nome, Nullable<System.DateTime> data_nascimento, string endereco, string profissao)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(decimal));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var telemovelParameter = telemovel.HasValue ?
+                new ObjectParameter("telemovel", telemovel) :
+                new ObjectParameter("telemovel", typeof(decimal));
+    
+            var nomeParameter = nome != null ?
+                new ObjectParameter("nome", nome) :
+                new ObjectParameter("nome", typeof(string));
+    
+            var data_nascimentoParameter = data_nascimento.HasValue ?
+                new ObjectParameter("data_nascimento", data_nascimento) :
+                new ObjectParameter("data_nascimento", typeof(System.DateTime));
+    
+            var enderecoParameter = endereco != null ?
+                new ObjectParameter("endereco", endereco) :
+                new ObjectParameter("endereco", typeof(string));
+    
+            var profissaoParameter = profissao != null ?
+                new ObjectParameter("profissao", profissao) :
+                new ObjectParameter("profissao", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddNewPerson", idParameter, emailParameter, telemovelParameter, nomeParameter, data_nascimentoParameter, enderecoParameter, profissaoParameter);
+        }
+    
+        public virtual int addNewTeam(string localizacao)
+        {
+            var localizacaoParameter = localizacao != null ?
+                new ObjectParameter("localizacao", localizacao) :
+                new ObjectParameter("localizacao", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addNewTeam", localizacaoParameter);
+        }
+    
+        public virtual int CreateTables()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CreateTables");
+        }
+    
+        public virtual int drop_tables()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("drop_tables");
+        }
+    
+        public virtual int EditPerson(Nullable<decimal> id, string email, Nullable<decimal> telemovel, string nome, Nullable<System.DateTime> data_nascimento, string endereco, string profissao)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(decimal));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var telemovelParameter = telemovel.HasValue ?
+                new ObjectParameter("telemovel", telemovel) :
+                new ObjectParameter("telemovel", typeof(decimal));
+    
+            var nomeParameter = nome != null ?
+                new ObjectParameter("nome", nome) :
+                new ObjectParameter("nome", typeof(string));
+    
+            var data_nascimentoParameter = data_nascimento.HasValue ?
+                new ObjectParameter("data_nascimento", data_nascimento) :
+                new ObjectParameter("data_nascimento", typeof(System.DateTime));
+    
+            var enderecoParameter = endereco != null ?
+                new ObjectParameter("endereco", endereco) :
+                new ObjectParameter("endereco", typeof(string));
+    
+            var profissaoParameter = profissao != null ?
+                new ObjectParameter("profissao", profissao) :
+                new ObjectParameter("profissao", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("EditPerson", idParameter, emailParameter, telemovelParameter, nomeParameter, data_nascimentoParameter, enderecoParameter, profissaoParameter);
+        }
+    
+        [DbFunction("L51NG7Entities", "ListInterByYear")]
+        public virtual IQueryable<ListInterByYear_Result> ListInterByYear(Nullable<decimal> ano)
+        {
+            var anoParameter = ano.HasValue ?
+                new ObjectParameter("ano", ano) :
+                new ObjectParameter("ano", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<ListInterByYear_Result>("[L51NG7Entities].[ListInterByYear](@ano)", anoParameter);
+        }
+    
+        public virtual int p_criaInter(Nullable<decimal> ativo_id, Nullable<decimal> valor, Nullable<System.DateTime> data_inicio, Nullable<System.DateTime> data_fim, Nullable<int> periodicidade, string descricao)
+        {
+            var ativo_idParameter = ativo_id.HasValue ?
+                new ObjectParameter("ativo_id", ativo_id) :
+                new ObjectParameter("ativo_id", typeof(decimal));
+    
+            var valorParameter = valor.HasValue ?
+                new ObjectParameter("valor", valor) :
+                new ObjectParameter("valor", typeof(decimal));
+    
+            var data_inicioParameter = data_inicio.HasValue ?
+                new ObjectParameter("data_inicio", data_inicio) :
+                new ObjectParameter("data_inicio", typeof(System.DateTime));
+    
+            var data_fimParameter = data_fim.HasValue ?
+                new ObjectParameter("data_fim", data_fim) :
+                new ObjectParameter("data_fim", typeof(System.DateTime));
+    
+            var periodicidadeParameter = periodicidade.HasValue ?
+                new ObjectParameter("periodicidade", periodicidade) :
+                new ObjectParameter("periodicidade", typeof(int));
+    
+            var descricaoParameter = descricao != null ?
+                new ObjectParameter("descricao", descricao) :
+                new ObjectParameter("descricao", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("p_criaInter", ativo_idParameter, valorParameter, data_inicioParameter, data_fimParameter, periodicidadeParameter, descricaoParameter);
+        }
+    
+        public virtual int PopulateTables()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PopulateTables");
+        }
+    
+        public virtual int RemovePerson(Nullable<decimal> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("RemovePerson", idParameter);
+        }
+    
+        public virtual int UpdateInterStatus(Nullable<decimal> id, string novo_estado)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(decimal));
+    
+            var novo_estadoParameter = novo_estado != null ?
+                new ObjectParameter("novo_estado", novo_estado) :
+                new ObjectParameter("novo_estado", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateInterStatus", idParameter, novo_estadoParameter);
+        }
+    
+        public virtual int updateTeamElements(Nullable<decimal> id, Nullable<decimal> id_equipa, Nullable<decimal> id_competencia, Nullable<int> delete_or_add)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(decimal));
+    
+            var id_equipaParameter = id_equipa.HasValue ?
+                new ObjectParameter("id_equipa", id_equipa) :
+                new ObjectParameter("id_equipa", typeof(decimal));
+    
+            var id_competenciaParameter = id_competencia.HasValue ?
+                new ObjectParameter("id_competencia", id_competencia) :
+                new ObjectParameter("id_competencia", typeof(decimal));
+    
+            var delete_or_addParameter = delete_or_add.HasValue ?
+                new ObjectParameter("delete_or_add", delete_or_add) :
+                new ObjectParameter("delete_or_add", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updateTeamElements", idParameter, id_equipaParameter, id_competenciaParameter, delete_or_addParameter);
+        }
     }
 }

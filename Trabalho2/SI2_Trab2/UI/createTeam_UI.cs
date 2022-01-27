@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SI2_Trab2.EF;
+using System.Transactions;
 //using System.Transactions;
 
 namespace SI2_Trab2.UI
@@ -32,8 +33,18 @@ namespace SI2_Trab2.UI
                 }
                 else if (option == "E")
                 {
-                   
-                    return 0;
+
+                    using (TransactionScope ts = Transaction.Ts.GetTsReadCommitted())
+                    {
+                        using (EF.L51NG7Entities context = new EF.L51NG7Entities())
+                        {
+                            Service service = new Service(context);
+                            service.addNewTeam(local);
+                            service.SaveChanges();
+                        }
+                        ts.Complete();
+                        return 0;
+                    }
                 }
                 else { Console.WriteLine("Invalid Option"); return -1; }
             }

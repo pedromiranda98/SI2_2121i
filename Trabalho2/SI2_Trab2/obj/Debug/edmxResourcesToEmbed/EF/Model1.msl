@@ -96,5 +96,45 @@
         <ScalarProperty Name="id_equipa" ColumnName="id_equipa" />
       </EndProperty>
     </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="AddNewPerson" FunctionName="L51NG7Model.Store.AddNewPerson" />
+    <FunctionImportMapping FunctionImportName="addNewTeam" FunctionName="L51NG7Model.Store.addNewTeam" />
+    <FunctionImportMapping FunctionImportName="CreateTables" FunctionName="L51NG7Model.Store.CreateTables" />
+    <FunctionImportMapping FunctionImportName="drop_tables" FunctionName="L51NG7Model.Store.drop_tables" />
+    <FunctionImportMapping FunctionImportName="EditPerson" FunctionName="L51NG7Model.Store.EditPerson" />
+    <FunctionImportMapping FunctionImportName="ListInterByYear" FunctionName="L51NG7Model.Store.ListInterByYear">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="L51NG7Model.ListInterByYear_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="p_criaInter" FunctionName="L51NG7Model.Store.p_criaInter" />
+    <FunctionImportMapping FunctionImportName="PopulateTables" FunctionName="L51NG7Model.Store.PopulateTables" />
+    <FunctionImportMapping FunctionImportName="RemovePerson" FunctionName="L51NG7Model.Store.RemovePerson" />
+    <FunctionImportMapping FunctionImportName="UpdateInterStatus" FunctionName="L51NG7Model.Store.UpdateInterStatus" />
+    <FunctionImportMapping FunctionImportName="updateTeamElements" FunctionName="L51NG7Model.Store.updateTeamElements" />
+    <EntitySetMapping Name="ResumoInters">
+      <EntityTypeMapping TypeName="L51NG7Model.ResumoInter">
+        <MappingFragment StoreEntitySet="ResumoInter">
+          <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+          <ScalarProperty Name="ativo_estado" ColumnName="ativo_estado" />
+          <ScalarProperty Name="localizacao" ColumnName="localizacao" />
+          <ScalarProperty Name="modelo" ColumnName="modelo" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="data_aquisicao" ColumnName="data_aquisicao" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="ativo_id" ColumnName="ativo_id" />
+          <ScalarProperty Name="periodicidade" ColumnName="periodicidade" />
+          <ScalarProperty Name="data_fim" ColumnName="data_fim" />
+          <ScalarProperty Name="data_inicio" ColumnName="data_inicio" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="inter_estado" ColumnName="inter_estado" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="inter_id" ColumnName="inter_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

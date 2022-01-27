@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="L51NG7Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="L51NG7Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Ativo">
           <Key>
             <PropertyRef Name="id" />
@@ -95,7 +95,34 @@
           <Property Name="id" Type="numeric" Precision="5" Scale="0" Nullable="false" />
           <Property Name="descricao" Type="varchar" MaxLength="100" />
         </EntityType>
-        <Association Name="FK__Ativo__id_tipo__37FA4C37">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'L51NG7.dbo.ResumoInter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ResumoInter">
+          <Key>
+            <PropertyRef Name="inter_id" />
+            <PropertyRef Name="nome" />
+            <PropertyRef Name="data_aquisicao" />
+            <PropertyRef Name="localizacao" />
+            <PropertyRef Name="ativo_estado" />
+          </Key>
+          <Property Name="inter_id" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="10" />
+          <Property Name="inter_estado" Type="varchar" MaxLength="20" />
+          <Property Name="valor" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="data_inicio" Type="date" />
+          <Property Name="data_fim" Type="date" />
+          <Property Name="periodicidade" Type="int" />
+          <Property Name="ativo_id" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="parent_id" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="data_aquisicao" Type="date" Nullable="false" />
+          <Property Name="marca" Type="varchar" MaxLength="20" />
+          <Property Name="modelo" Type="varchar" MaxLength="20" />
+          <Property Name="localizacao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ativo_estado" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="id_tipo" Type="numeric" Precision="5" Scale="0" />
+        </EntityType>
+        <Association Name="FK__Ativo__id_tipo__47F18835">
           <End Role="Tipo" Type="Self.Tipo" Multiplicity="0..1" />
           <End Role="Ativo" Type="Self.Ativo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -107,7 +134,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Ativo__parent_id__361203C5">
+        <Association Name="FK__Ativo__parent_id__46093FC3">
           <End Role="Ativo" Type="Self.Ativo" Multiplicity="0..1" />
           <End Role="Ativo1" Type="Self.Ativo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -119,7 +146,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Colaborad__id_eq__46486B8E">
+        <Association Name="FK__Colaborad__id_eq__5733CBC5">
           <End Role="Equipa" Type="Self.Equipa" Multiplicity="1" />
           <End Role="ColaboradorEquipa" Type="Self.ColaboradorEquipa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -131,7 +158,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ColaboradorE__id__45544755">
+        <Association Name="FK__ColaboradorE__id__563FA78C">
           <End Role="Funcionario" Type="Self.Funcionario" Multiplicity="1" />
           <End Role="ColaboradorEquipa" Type="Self.ColaboradorEquipa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -143,7 +170,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Competenc__id_co__4924D839">
+        <Association Name="FK__Competenc__id_co__5A103870">
           <End Role="Competencia" Type="Self.Competencia" Multiplicity="1" />
           <End Role="CompetenciaColaborador" Type="Self.CompetenciaColaborador" Multiplicity="*" />
           <ReferentialConstraint>
@@ -155,7 +182,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CompetenciaColab__4A18FC72">
+        <Association Name="FK__CompetenciaColab__5B045CA9">
           <End Role="ColaboradorEquipa" Type="Self.ColaboradorEquipa" Multiplicity="1" />
           <End Role="CompetenciaColaborador" Type="Self.CompetenciaColaborador" Multiplicity="*" />
           <ReferentialConstraint>
@@ -169,7 +196,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Intervenc__ativo__3CBF0154">
+        <Association Name="FK__Intervenc__ativo__4DAA618B">
           <End Role="Ativo" Type="Self.Ativo" Multiplicity="0..1" />
           <End Role="Intervencao" Type="Self.Intervencao" Multiplicity="*" />
           <ReferentialConstraint>
@@ -181,7 +208,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Intervenc__id_eq__3F9B6DFF">
+        <Association Name="FK__Intervenc__id_eq__5086CE36">
           <End Role="Equipa" Type="Self.Equipa" Multiplicity="1" />
           <End Role="IntervencaoEquipa" Type="Self.IntervencaoEquipa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -193,7 +220,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Intervenc__id_in__408F9238">
+        <Association Name="FK__Intervenc__id_in__517AF26F">
           <End Role="Intervencao" Type="Self.Intervencao" Multiplicity="1" />
           <End Role="IntervencaoEquipa" Type="Self.IntervencaoEquipa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -205,6 +232,70 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="AddNewPerson" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="numeric" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="telemovel" Type="numeric" Mode="In" />
+          <Parameter Name="nome" Type="varchar" Mode="In" />
+          <Parameter Name="data_nascimento" Type="date" Mode="In" />
+          <Parameter Name="endereco" Type="varchar" Mode="In" />
+          <Parameter Name="profissao" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="addNewTeam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="localizacao" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="CreateTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="drop_tables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="EditPerson" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="numeric" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="telemovel" Type="numeric" Mode="In" />
+          <Parameter Name="nome" Type="varchar" Mode="In" />
+          <Parameter Name="data_nascimento" Type="date" Mode="In" />
+          <Parameter Name="endereco" Type="varchar" Mode="In" />
+          <Parameter Name="profissao" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="generateInterId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="numeric" />
+        <Function Name="generateTeamId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="numeric" />
+        <Function Name="getAvailableTeam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="numeric">
+          <Parameter Name="interv_desc" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getNextInterId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="numeric" />
+        <Function Name="getNextTeamId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="numeric" />
+        <Function Name="ListInterByYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ano" Type="numeric" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="id" Type="numeric" Precision="9" Scale="0" />
+                <Property Name="descricao" Type="varchar" MaxLength="10" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="p_criaInter" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ativo_id" Type="numeric" Mode="In" />
+          <Parameter Name="valor" Type="decimal" Mode="In" />
+          <Parameter Name="data_inicio" Type="date" Mode="In" />
+          <Parameter Name="data_fim" Type="date" Mode="In" />
+          <Parameter Name="periodicidade" Type="int" Mode="In" />
+          <Parameter Name="descricao" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="PopulateTables" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="RemovePerson" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="numeric" Mode="In" />
+        </Function>
+        <Function Name="returnMax" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="UpdateInterStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="numeric" Mode="In" />
+          <Parameter Name="novo_estado" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="updateTeamElements" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="numeric" Mode="In" />
+          <Parameter Name="id_equipa" Type="numeric" Mode="In" />
+          <Parameter Name="id_competencia" Type="numeric" Mode="In" />
+          <Parameter Name="delete_or_add" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="L51NG7ModelStoreContainer">
           <EntitySet Name="Ativo" EntityType="Self.Ativo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ColaboradorEquipa" EntityType="Self.ColaboradorEquipa" Schema="dbo" store:Type="Tables" />
@@ -215,45 +306,64 @@
           <EntitySet Name="Intervencao" EntityType="Self.Intervencao" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IntervencaoEquipa" EntityType="Self.IntervencaoEquipa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tipo" EntityType="Self.Tipo" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Ativo__id_tipo__37FA4C37" Association="Self.FK__Ativo__id_tipo__37FA4C37">
+          <EntitySet Name="ResumoInter" EntityType="Self.ResumoInter" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ResumoInter].[inter_id] AS [inter_id], 
+    [ResumoInter].[descricao] AS [descricao], 
+    [ResumoInter].[inter_estado] AS [inter_estado], 
+    [ResumoInter].[valor] AS [valor], 
+    [ResumoInter].[data_inicio] AS [data_inicio], 
+    [ResumoInter].[data_fim] AS [data_fim], 
+    [ResumoInter].[periodicidade] AS [periodicidade], 
+    [ResumoInter].[ativo_id] AS [ativo_id], 
+    [ResumoInter].[parent_id] AS [parent_id], 
+    [ResumoInter].[nome] AS [nome], 
+    [ResumoInter].[data_aquisicao] AS [data_aquisicao], 
+    [ResumoInter].[marca] AS [marca], 
+    [ResumoInter].[modelo] AS [modelo], 
+    [ResumoInter].[localizacao] AS [localizacao], 
+    [ResumoInter].[ativo_estado] AS [ativo_estado], 
+    [ResumoInter].[id_tipo] AS [id_tipo]
+    FROM [dbo].[ResumoInter] AS [ResumoInter]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Ativo__id_tipo__47F18835" Association="Self.FK__Ativo__id_tipo__47F18835">
             <End Role="Tipo" EntitySet="Tipo" />
             <End Role="Ativo" EntitySet="Ativo" />
           </AssociationSet>
-          <AssociationSet Name="FK__Ativo__parent_id__361203C5" Association="Self.FK__Ativo__parent_id__361203C5">
+          <AssociationSet Name="FK__Ativo__parent_id__46093FC3" Association="Self.FK__Ativo__parent_id__46093FC3">
             <End Role="Ativo" EntitySet="Ativo" />
             <End Role="Ativo1" EntitySet="Ativo" />
           </AssociationSet>
-          <AssociationSet Name="FK__Colaborad__id_eq__46486B8E" Association="Self.FK__Colaborad__id_eq__46486B8E">
+          <AssociationSet Name="FK__Colaborad__id_eq__5733CBC5" Association="Self.FK__Colaborad__id_eq__5733CBC5">
             <End Role="Equipa" EntitySet="Equipa" />
             <End Role="ColaboradorEquipa" EntitySet="ColaboradorEquipa" />
           </AssociationSet>
-          <AssociationSet Name="FK__ColaboradorE__id__45544755" Association="Self.FK__ColaboradorE__id__45544755">
+          <AssociationSet Name="FK__ColaboradorE__id__563FA78C" Association="Self.FK__ColaboradorE__id__563FA78C">
             <End Role="Funcionario" EntitySet="Funcionario" />
             <End Role="ColaboradorEquipa" EntitySet="ColaboradorEquipa" />
           </AssociationSet>
-          <AssociationSet Name="FK__Competenc__id_co__4924D839" Association="Self.FK__Competenc__id_co__4924D839">
+          <AssociationSet Name="FK__Competenc__id_co__5A103870" Association="Self.FK__Competenc__id_co__5A103870">
             <End Role="Competencia" EntitySet="Competencia" />
             <End Role="CompetenciaColaborador" EntitySet="CompetenciaColaborador" />
           </AssociationSet>
-          <AssociationSet Name="FK__CompetenciaColab__4A18FC72" Association="Self.FK__CompetenciaColab__4A18FC72">
+          <AssociationSet Name="FK__CompetenciaColab__5B045CA9" Association="Self.FK__CompetenciaColab__5B045CA9">
             <End Role="ColaboradorEquipa" EntitySet="ColaboradorEquipa" />
             <End Role="CompetenciaColaborador" EntitySet="CompetenciaColaborador" />
           </AssociationSet>
-          <AssociationSet Name="FK__Intervenc__ativo__3CBF0154" Association="Self.FK__Intervenc__ativo__3CBF0154">
+          <AssociationSet Name="FK__Intervenc__ativo__4DAA618B" Association="Self.FK__Intervenc__ativo__4DAA618B">
             <End Role="Ativo" EntitySet="Ativo" />
             <End Role="Intervencao" EntitySet="Intervencao" />
           </AssociationSet>
-          <AssociationSet Name="FK__Intervenc__id_eq__3F9B6DFF" Association="Self.FK__Intervenc__id_eq__3F9B6DFF">
+          <AssociationSet Name="FK__Intervenc__id_eq__5086CE36" Association="Self.FK__Intervenc__id_eq__5086CE36">
             <End Role="Equipa" EntitySet="Equipa" />
             <End Role="IntervencaoEquipa" EntitySet="IntervencaoEquipa" />
           </AssociationSet>
-          <AssociationSet Name="FK__Intervenc__id_in__408F9238" Association="Self.FK__Intervenc__id_in__408F9238">
+          <AssociationSet Name="FK__Intervenc__id_in__517AF26F" Association="Self.FK__Intervenc__id_in__517AF26F">
             <End Role="Intervencao" EntitySet="Intervencao" />
             <End Role="IntervencaoEquipa" EntitySet="IntervencaoEquipa" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="L51NG7Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -482,7 +592,85 @@
             <End Role="Competencia" EntitySet="Competencias" />
             <End Role="ColaboradorEquipa" EntitySet="ColaboradorEquipas" />
           </AssociationSet>
+          <FunctionImport Name="AddNewPerson">
+            <Parameter Name="id" Mode="In" Type="Decimal" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="telemovel" Mode="In" Type="Decimal" />
+            <Parameter Name="nome" Mode="In" Type="String" />
+            <Parameter Name="data_nascimento" Mode="In" Type="DateTime" />
+            <Parameter Name="endereco" Mode="In" Type="String" />
+            <Parameter Name="profissao" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="addNewTeam">
+          <Parameter Name="localizacao" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CreateTables" />
+          <FunctionImport Name="drop_tables" />
+          <FunctionImport Name="EditPerson">
+            <Parameter Name="id" Mode="In" Type="Decimal" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="telemovel" Mode="In" Type="Decimal" />
+            <Parameter Name="nome" Mode="In" Type="String" />
+            <Parameter Name="data_nascimento" Mode="In" Type="DateTime" />
+            <Parameter Name="endereco" Mode="In" Type="String" />
+            <Parameter Name="profissao" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ListInterByYear" IsComposable="true" ReturnType="Collection(L51NG7Model.ListInterByYear_Result)">
+          <Parameter Name="ano" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="p_criaInter">
+            <Parameter Name="ativo_id" Mode="In" Type="Decimal" />
+            <Parameter Name="valor" Mode="In" Type="Decimal" />
+            <Parameter Name="data_inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="data_fim" Mode="In" Type="DateTime" />
+            <Parameter Name="periodicidade" Mode="In" Type="Int32" />
+            <Parameter Name="descricao" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PopulateTables" />
+          <FunctionImport Name="RemovePerson">
+          <Parameter Name="id" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateInterStatus">
+            <Parameter Name="id" Mode="In" Type="Decimal" />
+            <Parameter Name="novo_estado" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="updateTeamElements">
+            <Parameter Name="id" Mode="In" Type="Decimal" />
+            <Parameter Name="id_equipa" Mode="In" Type="Decimal" />
+            <Parameter Name="id_competencia" Mode="In" Type="Decimal" />
+            <Parameter Name="delete_or_add" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="ResumoInters" EntityType="L51NG7Model.ResumoInter" />
         </EntityContainer>
+        <ComplexType Name="ListInterByYear_Result">
+          <Property Type="Decimal" Name="id" Nullable="true" Precision="9" Scale="0" />
+          <Property Type="String" Name="descricao" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <EntityType Name="ResumoInter">
+          <Key>
+            <PropertyRef Name="inter_id" />
+            <PropertyRef Name="nome" />
+            <PropertyRef Name="data_aquisicao" />
+            <PropertyRef Name="localizacao" />
+            <PropertyRef Name="ativo_estado" />
+          </Key>
+          <Property Name="inter_id" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+          <Property Name="descricao" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="inter_estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="valor" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="data_inicio" Type="DateTime" Precision="0" />
+          <Property Name="data_fim" Type="DateTime" Precision="0" />
+          <Property Name="periodicidade" Type="Int32" />
+          <Property Name="ativo_id" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="parent_id" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="data_aquisicao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="marca" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="modelo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="localizacao" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ativo_estado" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="id_tipo" Type="Decimal" Precision="5" Scale="0" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -584,6 +772,46 @@
               <ScalarProperty Name="id_equipa" ColumnName="id_equipa" />
             </EndProperty>
           </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="AddNewPerson" FunctionName="L51NG7Model.Store.AddNewPerson" />
+          <FunctionImportMapping FunctionImportName="addNewTeam" FunctionName="L51NG7Model.Store.addNewTeam" />
+          <FunctionImportMapping FunctionImportName="CreateTables" FunctionName="L51NG7Model.Store.CreateTables" />
+          <FunctionImportMapping FunctionImportName="drop_tables" FunctionName="L51NG7Model.Store.drop_tables" />
+          <FunctionImportMapping FunctionImportName="EditPerson" FunctionName="L51NG7Model.Store.EditPerson" />
+          <FunctionImportMapping FunctionImportName="ListInterByYear" FunctionName="L51NG7Model.Store.ListInterByYear">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="L51NG7Model.ListInterByYear_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="p_criaInter" FunctionName="L51NG7Model.Store.p_criaInter" />
+          <FunctionImportMapping FunctionImportName="PopulateTables" FunctionName="L51NG7Model.Store.PopulateTables" />
+          <FunctionImportMapping FunctionImportName="RemovePerson" FunctionName="L51NG7Model.Store.RemovePerson" />
+          <FunctionImportMapping FunctionImportName="UpdateInterStatus" FunctionName="L51NG7Model.Store.UpdateInterStatus" />
+          <FunctionImportMapping FunctionImportName="updateTeamElements" FunctionName="L51NG7Model.Store.updateTeamElements" />
+          <EntitySetMapping Name="ResumoInters">
+            <EntityTypeMapping TypeName="L51NG7Model.ResumoInter">
+              <MappingFragment StoreEntitySet="ResumoInter">
+                <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+                <ScalarProperty Name="ativo_estado" ColumnName="ativo_estado" />
+                <ScalarProperty Name="localizacao" ColumnName="localizacao" />
+                <ScalarProperty Name="modelo" ColumnName="modelo" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="data_aquisicao" ColumnName="data_aquisicao" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="ativo_id" ColumnName="ativo_id" />
+                <ScalarProperty Name="periodicidade" ColumnName="periodicidade" />
+                <ScalarProperty Name="data_fim" ColumnName="data_fim" />
+                <ScalarProperty Name="data_inicio" ColumnName="data_inicio" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="inter_estado" ColumnName="inter_estado" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+                <ScalarProperty Name="inter_id" ColumnName="inter_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
